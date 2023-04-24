@@ -1,0 +1,97 @@
+<div class="header bg-gradient-danger pb-8 pt-5 pt-md-8">
+  <div class="container-fluid">
+    <div class="header-body"></div>
+  </div>
+</div>
+
+<div class="container-fluid mt--7">
+  <div class="row">
+    <div class="col-xl-12 mb-5 mb-xl-0">
+      <div class="card shadow">
+        <div class="card-header bg-transparent">
+          <h3>ORDERS</h3>
+        </div>
+        <div class="card-body">
+          <form #Form="ngForm" (submit)="AddOrder(Form)">
+            <div class="form-group">
+              <h4>Select products</h4>
+              <ng-multiselect-dropdown
+                [placeholder]="'Select Product'"
+                [settings]="dropdownSettings"
+                [data]="dropdownList"
+                ngModel
+                (onSelect)="onItemSelect($event)"
+                (onSelectAll)="onSelectAll($event)"
+                name="product"
+              >
+              </ng-multiselect-dropdown>
+            </div>
+            <pre></pre>
+            <h4>Price</h4>
+            <input
+              type="text"
+              class="form-control"
+              id="exampleFormControlInput1"
+              placeholder=".."
+              ngModel
+              name="price"
+            />
+            <pre></pre>
+            <h4>Buyer Name</h4>
+            <input
+              type="text"
+              class="form-control"
+              id="exampleFormControlInput1"
+              placeholder=""
+              ngModel
+              name="buyer_name"
+            />
+            <pre></pre>
+            <h4>Address</h4>
+            <input
+              type="text"
+              class="form-control"
+              id="exampleFormControlInput1"
+              placeholder=".."
+              ngModel
+              name="address"
+            />
+            <pre></pre>
+            <h4>Mobile</h4>
+            <input
+              type="number"
+              class="form-control"
+              id="exampleFormControlInput1"
+              placeholder=""
+              ngModel
+              name="mobile"
+            />
+            <!-- <div class="border rounded p-2 my-2">
+            <div class="row">
+              <div class="col-1">
+                <img src="" alt="img" />
+              </div>
+              <div class="col border-left">
+                <h4>This is a fake product title klhjkgjh, jkjk</h4>
+                <h4>Price: <span>$6789</span></h4>
+                <h4>Qty: <span>9</span></h4>
+                <div class="row">
+                  <div class="">
+                    <p class="border rounded-pill p-1 px-3">+</p>
+                  </div>
+                  <h6>1</h6>
+                  <div class="">
+                    <p class="border rounded-pill p-1 px-3">-</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div> -->
+            <pre></pre>
+            <button class="btn btn-success">Place Order</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
